@@ -1,0 +1,39 @@
+Source: cmd2
+Section: python
+Priority: optional
+Maintainer: Federico Ceratto <federico@debian.org>
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep:
+ dh-python,
+ python3-all,
+ python3-attr,
+ python3-colorama,
+ python3-contextlib2,
+ python3-pyperclip,
+ python3-pytest,
+ python3-pytest-cov,
+ python3-pytest-mock,
+ python3-setuptools,
+ python3-setuptools-scm,
+ python3-wcwidth
+Standards-Version: 4.5.1
+Homepage: https://github.com/python-cmd2/cmd2
+Vcs-Git: https://salsa.debian.org/debian/python-cmd2.git
+Vcs-Browser: https://salsa.debian.org/debian/python-cmd2
+Testsuite: autopkgtest-pkg-python
+Rules-Requires-Root: no
+
+Package: python3-cmd2
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends: ${misc:Depends}, ${python3:Depends},
+ python3-wcwidth,
+Recommends: ${python3:Recommends}
+Provides: ${python3:Provides}
+Breaks: python3-pyperclip (<< 1.6.0-1)
+Description: enhanced Python cmd module - Python 3.x
+ Drop-in replacement adds several features for command-prompt tools, like
+ searchable and persistent command history, multi-line commands, input and
+ output redirections, integrated Python shell, testing helpers
+ .
+ This package provides the Python 3.x module.
